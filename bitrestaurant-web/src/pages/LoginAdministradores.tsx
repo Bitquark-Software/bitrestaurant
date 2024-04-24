@@ -21,6 +21,7 @@ const LoginAdmnistradores = () => {
                                     <label className="text-left text-2xl lg:text-sm">Correo electronico:</label>
                                     <input type="text" className="border-b border-gray-400 mb-4 focus:outline-none w-full"/>
                                 </div>
+                                
                                 <div className="flex flex-col m-12   lg:m-5  flex flex-col  w-2/4 ">
                                     <label className="text-left text-2xl lg:text-sm">Contraseña:</label>
                                     <input className="border-b border-gray-500 mb-4 focus:outline-none w-full" type="text" />
