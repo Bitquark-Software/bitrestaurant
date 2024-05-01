@@ -1,4 +1,4 @@
-import React from "react";
+
 import { useState } from "react";
 
 import fondoLogin from "../assets/CCEeHAC9eZ5SayqW7vQtI-transformed.jpeg";
@@ -14,9 +14,9 @@ const RegistroAdmnistradores = () => {
     const [fechaNacimiento, setFechaNacimiento] = useState("");
     const [telefono, setTelefono] = useState ("");
     const [rfc, setRfc] = useState("");
-    const [info, setInfo] = useState("");
+    const [origen, setOrigen] = useState("");
     const [correo, setCorreo] = useState("");
-    const [contraseña, setContraseña] = useState("");
+    const [password, setPassword] = useState("");
 
 
     return (
@@ -36,29 +36,29 @@ const RegistroAdmnistradores = () => {
                                 </div>
                                 
                                 <div className="flex flex-col m-12   lg:m-1  flex flex-col  w-2/4 ">
-                                    <label className="text-left text-2xl lg:text-sm"onChange={(e) => {setApellidos(e.target.value);}} value ={apellidos}>Apellidos:</label>
-                                    <input className="border-b border-gray-500 mb-4 focus:outline-none w-full" type="text" />
+                                    <label className="text-left text-2xl lg:text-sm">Apellidos:</label>
+                                    <input className="border-b border-gray-500 mb-4 focus:outline-none w-full" type="text" onChange={(e) => {setApellidos(e.target.value);}} value ={apellidos} />
                                 </div>
 
                                 <div className="flex flex-col m-12   lg:m-1  flex flex-col  w-2/4 ">
-                                    <label className="text-left text-2xl lg:text-sm" onChange={(e) => {setFechaNacimiento(e.target.value);}} value ={fechaNacimiento}>Fecha de nacimiento:</label>
-                                    <input className="border-b border-gray-500 mb-4 focus:outline-none w-full" type="text" />
+                                    <label className="text-left text-2xl lg:text-sm">Fecha de nacimiento:</label>
+                                    <input className="border-b border-gray-500 mb-4 focus:outline-none w-full" type="date"  onChange={(e) => {setFechaNacimiento(e.target.value);}} value ={fechaNacimiento} />
                                 </div>
 
                              
                                 <div className="flex flex-col m-12  lg:m-1 flex flex-col  w-2/4 ">
-                                    <label className="text-left text-2xl lg:text-sm" onChange={(e) => {setTelefono(e.target.value);}} value ={telefono}>Telefono:</label>
-                                    <input type="text" className="border-b border-gray-400 mb-4 focus:outline-none w-full"/>
+                                    <label className="text-left text-2xl lg:text-sm" >Telefono:</label>
+                                    <input type="tel" className="border-b border-gray-400 mb-4 focus:outline-none w-full" onChange={(e) => {setTelefono(e.target.value);}} value ={telefono}/>
                                 </div>
 
                                 <div className="flex flex-col m-12   lg:m-1  flex flex-col  w-2/4  ">
-                                    <label className="text-left text-2xl lg:text-sm" onChange={(e) => {setRfc(e.target.value);}} value ={rfc}>RFC:</label>
-                                    <input className="border-b border-gray-500 mb-4 focus:outline-none w-full" type="text" />
+                                    <label className="text-left text-2xl lg:text-sm" >RFC:</label>
+                                    <input className="border-b border-gray-500 mb-4 focus:outline-none w-full" type="text" onChange={(e) => {setRfc(e.target.value);}} value ={rfc}/>
                                 </div>
 
                                 <div className="flex flex-col m-12   lg:m-1  flex flex-col  w-2/4 ">
-                                    <label className="text-left text-2xl lg:text-sm" onChange={(e) => {setInfo(e.target.value);}}value ={info}>Como te enteraste de BitRestaurant?</label>
-                                    <select className="border-b border-gray+-500 mb-4 focus:outline-none w-full" type="text">
+                                    <label className="text-left text-2xl lg:text-sm" >Como te enteraste de BitRestaurant?</label>
+                                    <select className="border-b border-gray+-500 mb-4 focus:outline-none w-full" onChange={(e) => {setOrigen(e.target.value);}}value ={origen}>
                                         <option value="Facebook">Facebook</option>
                                         <option value="Instagram">Instagram</option>
                                         <option value="Amigos">Amigos</option>
@@ -67,13 +67,13 @@ const RegistroAdmnistradores = () => {
 
                 
                                 <div className="flex flex-col m-12   lg:m-1  flex flex-col  w-2/4 ">
-                                    <label className="text-left text-2xl lg:text-sm" onChange={(e) => {setCorreo(e.target.value);}} value ={correo}>Correo electronico:</label>
-                                    <input type="text" className="border-b border-gray-400 mb-4 focus:outline-none w-full"/>
+                                    <label className="text-left text-2xl lg:text-sm">Correo electronico:</label>
+                                    <input type="text" className="border-b border-gray-400 mb-4 focus:outline-none w-full"  onClick={(e) => {setCorreo(e.target.value);}} value ={correo}/>
                                 </div>
 
                                 <div className="flex flex-col m-12   lg:m-1  flex flex-col  w-2/4 ">
-                                    <label className="text-left text-2xl lg:text-sm" onChange={(e) => {setContraseña(e.target.value);}} value ={contraseña}>Contraseña:</label>
-                                    <input className="border-b border-gray-500 mb-4 focus:outline-none w-full" type="text" />
+                                    <label className="text-left text-2xl lg:text-sm" >Contraseña:</label>
+                                    <input className="border-b border-gray-500 mb-4 focus:outline-none w-full" type="text" onChange={(e) => {setPassword(e.target.value);}} value ={password}/>
                                 </div>
 
                               

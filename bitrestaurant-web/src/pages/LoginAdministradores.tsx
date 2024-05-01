@@ -1,9 +1,14 @@
-import React from "react";
+
+import { useState } from "react";
 import fondoLogin from "../assets/CCEeHAC9eZ5SayqW7vQtI-transformed.jpeg";
 const LoginAdmnistradores = () => {
     async function logearAdministrador (e: React.FormEvent) {
         e.preventDefault();
     }
+
+    const [correo, setCorreo] = useState("");
+    const [password, setPassword] = useState("");
+
     return (
         <>
             <div className="w-screen h-screen bg-cover bg-left md:bg-center " style={{backgroundImage: `url(${fondoLogin})`}}>
@@ -13,18 +18,15 @@ const LoginAdmnistradores = () => {
                             <h1 className="flex  text-center font-bold m-20 text-5xl lg: text-2xl">
                              INICIA SESIÓN
                             </h1>
-                        
                             <div className="w-screen h-2/3 flex items-center justify-center flex-col  lg:w-full m-0 flex flex-col h-4/4   " >
-
-                            
                                 <div className="flex flex-col m-12   lg:m-5  flex flex-col  w-2/4 ">
                                     <label className="text-left text-2xl lg:text-sm">Correo electronico:</label>
-                                    <input type="text" className="border-b border-gray-400 mb-4 focus:outline-none w-full"/>
+                                    <input type="text" className="border-b border-gray-400 mb-4 focus:outline-none w-full"  onClick={(e) => {setCorreo(e.target.value);}} value ={correo}/>
                                 </div>
-                                
+
                                 <div className="flex flex-col m-12   lg:m-5  flex flex-col  w-2/4 ">
                                     <label className="text-left text-2xl lg:text-sm">Contraseña:</label>
-                                    <input className="border-b border-gray-500 mb-4 focus:outline-none w-full" type="text" />
+                                    <input className="border-b border-gray-500 mb-4 focus:outline-none w-full" type="text"  onClick={(e) => {setPassword(e.target.value);}} value ={password}/>
                                 </div>
 
                                 <div className="flex flex-col m-12 lg:m-1 flex flex-col w-2/4">
