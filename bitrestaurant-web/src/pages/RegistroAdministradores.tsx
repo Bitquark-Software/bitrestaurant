@@ -61,7 +61,7 @@ const RegistroAdmnistradores = () => {
                                     <select className="border-b border-gray+-500 mb-4 focus:outline-none w-full" onChange={(e) => {setOrigen(e.target.value);}}value ={origen}>
                                         <option value="Facebook">Facebook</option>
                                         <option value="Instagram">Instagram</option>
-                                        <option value="Amigos">Amigos</option>
+                                        <option value="Amigos">Otros medio</option>
                                     </select>
                                 </div>
 
