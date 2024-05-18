@@ -1,6 +1,4 @@
-
-import { useState } from "react";
-
+import React, { useState } from "react";
 import fondoLogin from "../assets/CCEeHAC9eZ5SayqW7vQtI-transformed.jpeg";
 const RegistroAdmnistradores = () => {
 
@@ -61,14 +59,14 @@ const RegistroAdmnistradores = () => {
                                     <select className="border-b border-gray+-500 mb-4 focus:outline-none w-full" onChange={(e) => {setOrigen(e.target.value);}}value ={origen}>
                                         <option value="Facebook">Facebook</option>
                                         <option value="Instagram">Instagram</option>
-                                        <option value="Amigos">Otros medio</option>
+                                        <option value="Otro medio">Otro medio</option>
                                     </select>
                                 </div>
 
                 
                                 <div className="flex flex-col m-12   lg:m-1  flex flex-col  w-2/4 ">
                                     <label className="text-left text-2xl lg:text-sm">Correo electronico:</label>
-                                    <input type="text" className="border-b border-gray-400 mb-4 focus:outline-none w-full"  onClick={(e) => {setCorreo(e.target.value);}} value ={correo}/>
+                                    <input type="text" className="border-b border-gray-400 mb-4 focus:outline-none w-full"  onChange={(e) => {setCorreo(e.target.value);}} value ={correo}/>
                                 </div>
 
                                 <div className="flex flex-col m-12   lg:m-1  flex flex-col  w-2/4 ">
