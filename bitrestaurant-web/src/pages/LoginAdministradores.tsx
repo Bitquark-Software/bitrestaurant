@@ -28,7 +28,7 @@ const LoginAdmnistradores = () => {
                                     <input className="border-b border-gray-500 mb-4 focus:outline-none w-full" type="text"  onChange={(e) => {setPassword(e.target.value);}} value ={password}/>
                                 </div>
 
-                                <div className="flex flex-col m-12 lg:m-1 flex flex-col w-2/4">
+                                <div className="flex flex-col  lg:m-1 flex flex-col w-2/4">
                                     <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4  rounded-2xl w-full h-12">Crear cuenta</button>
                                 </div>
                         
