@@ -1,7 +1,7 @@
 import React from "react";
-import fondoLogin from "../assets/CCEeHAC9eZ5SayqW7vQtI-transformed.jpeg";
+import fondoLogin from "../assets/dashboard-bg.jpg";
 
-const Dashboard = () => {
+const Dashboard: React.FC = () => {
     return (
         <div>
       

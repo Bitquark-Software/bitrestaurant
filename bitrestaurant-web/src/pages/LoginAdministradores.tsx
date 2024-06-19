@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import fondoLogin from "../assets/CCEeHAC9eZ5SayqW7vQtI-transformed.jpeg";
-const LoginAdmnistradores = () => {
+
+const LoginAdmnistradores: React.FC = () => {
     async function logearAdministrador (e: React.FormEvent) {
         e.preventDefault();
     }
@@ -29,7 +30,7 @@ const LoginAdmnistradores = () => {
                                 </div>
 
                                 <div className="flex flex-col  lg:m-1 flex flex-col w-2/4">
-                                    <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4  rounded-2xl w-full h-12">Crear cuenta</button>
+                                    <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4  rounded-2xl w-full h-12">Iniciar sesión</button>
                                 </div>
                         
                             </div>

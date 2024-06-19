@@ -12,8 +12,8 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
             <Routes>
                 <Route path="/" element={<LoginAdministradores />} />
                 <Route path="/registro" element={<RegistroAdministradores />} />
-                <Route path="/dashboard" element={<Dashboard/>}/>
-            </Routes> 
+                <Route path="/dashboard" element={<Dashboard />} />
+            </Routes>
         </Router>
     </React.StrictMode>
 );

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import fondoLogin from "../assets/CCEeHAC9eZ5SayqW7vQtI-transformed.jpeg";
-const RegistroAdmnistradores = () => {
+
+const RegistroAdmnistradores: React.FC = () => {
 
 
     async function registrarAdministrador (e: React.FormEvent) {
