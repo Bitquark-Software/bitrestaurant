@@ -23,7 +23,7 @@ const RegistroAdministradores = () => {
                 name,
                 apellido,
                 password,
-                role: 'administrador',
+                role: 'admin',
                 fechaDeNacimiento,
                 telefono,
                 rfc,
