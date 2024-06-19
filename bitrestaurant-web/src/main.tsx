@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./index.css";
 import LoginAdministradores from "./pages/LoginAdministradores";
 import RegistroAdministradores from "./pages/RegistroAdministradores";
+import Dashboard from "./pages/Dashboard";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
     <React.StrictMode>
@@ -11,6 +12,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
             <Routes>
                 <Route path="/" element={<LoginAdministradores />} />
                 <Route path="/registro" element={<RegistroAdministradores />} />
+                <Route path="/dashboard" element={<Dashboard />} />
             </Routes>
         </Router>
     </React.StrictMode>
