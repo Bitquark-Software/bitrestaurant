@@ -1,45 +1,64 @@
 import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom"; 
 import fondoLogin from "../assets/CCEeHAC9eZ5SayqW7vQtI-transformed.jpeg";
 
-const LoginAdmnistradores: React.FC = () => {
-    async function logearAdministrador (e: React.FormEvent) {
-        e.preventDefault();
-    }
-
+const LoginAdmnistradores = () => {
+    const navigate = useNavigate();
     const [correo, setCorreo] = useState("");
     const [password, setPassword] = useState("");
+    const [error, setError] = useState("");
+
+    async function logearAdministrador(e) {
+        e.preventDefault();
+
+        try {
+            const response = await axios.post('http://localhost:3000/users/users/login', {
+                email: correo,
+                password: password
+            });
+
+            console.log(response.data); 
+            navigate('/dashboard');
+            
+        } catch (error) {
+            console.error('Error de autenticación:', error.response.data.message);
+            setError('Credenciales inválidas. Inténtalo de nuevo.'); 
+        }
+    }
 
     return (
         <>
-            <div className="w-screen h-screen bg-cover bg-left md:bg-center " style={{backgroundImage: `url(${fondoLogin})`}}>
+            <div className="w-screen h-screen bg-cover bg-left md:bg-center " style={{backgroundImage: url(${fondoLogin})}}>
                 <div className="w-full h-full flex flex-col-reverse lg:flex-row-reverse">
                     <div className=" bg-white p-6 h-3/5 w-10/12  lg:w-3/6 lg:h-screen mx-auto lg:mx-0 my-12 lg:my-0 rounded-3xl ">
                         <form className="flex items-center justify-start flex-col w-10/12 h-full mx-auto lg:align-baseline" onSubmit={logearAdministrador}>
                             <h1 className="flex  text-center font-bold m-20 text-5xl lg: text-2xl">
-                             INICIA SESIÓN
+                                INICIA SESIÓN
                             </h1>
                             <div className="w-screen h-2/3 flex items-center justify-center flex-col  lg:w-full m-0 flex flex-col h-4/4   " >
                                 <div className="flex flex-col m-12   lg:m-5  flex flex-col  w-2/4 ">
-                                    <label className="text-left text-2xl lg:text-sm">Correo electronico:</label>
-                                    <input type="text" className="border-b border-gray-400 mb-4 focus:outline-none w-full"  onChange={(e) => {setCorreo(e.target.value);}} value ={correo}/>
+                                    <label className="text-left text-2xl lg:text-sm">Correo electrónico:</label>
+                                    <input type="text" className="border-b border-gray-400 mb-4 focus:outline-none w-full"  onChange={(e) => {setCorreo(e.target.value);}} value={correo}/>
                                 </div>
 
                                 <div className="flex flex-col m-12   lg:m-5  flex flex-col  w-2/4 ">
                                     <label className="text-left text-2xl lg:text-sm">Contraseña:</label>
-                                    <input className="border-b border-gray-500 mb-4 focus:outline-none w-full" type="text"  onChange={(e) => {setPassword(e.target.value);}} value ={password}/>
+                                    <input className="border-b border-gray-500 mb-4 focus:outline-none w-full" type="password"  onChange={(e) => {setPassword(e.target.value);}} value={password}/>
                                 </div>
 
+                                {error && <p className="text-red-500">{error}</p>}
+
                                 <div className="flex flex-col  lg:m-1 flex flex-col w-2/4">
-                                    <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4  rounded-2xl w-full h-12">Iniciar sesión</button>
+                                    <button type="submit" className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4  rounded-2xl w-full h-12">Iniciar sesión</button>
                                 </div>
-                        
                             </div>
                         </form>
                     </div>
                 </div>
-
             </div>
         </>
     );
 };
+
 export default LoginAdmnistradores;
